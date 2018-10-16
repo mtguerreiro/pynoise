@@ -42,7 +42,7 @@
 <p>This module contains functions to work with signals and noise.</p>
 <span class="target" id="module-noise"></span><dl class="function">
 <dt id="pynoise.noise.awgn">
-<code class="descclassname">pynoise.noise.</code><code class="descname">awgn</code><span class="sig-paren">(</span><em>x</em>, <em>snr</em>, <em>out='signal'</em><span class="sig-paren">)</span><a class="headerlink" href="#pynoise.noise.awgn" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">pynoise.noise.</code><code class="descname">awgn</code><span class="sig-paren">(</span><em>x</em>, <em>snr</em>, <em>out='signal'</em>, <em>method='vectorized'</em><span class="sig-paren">)</span><a class="headerlink" href="#pynoise.noise.awgn" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds White Gaussian Noise to a signal.</p>
 <p>The noise level is specified as a Signal-to-Noise Ratio (SNR) value.
 The SNR is defined as:</p>
@@ -57,19 +57,28 @@ power. The noise of a discrete signal can be computed as:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> (<code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code>) – Signal.</li>
+<li><strong>x</strong> (<cite>np.ndarray</cite>) – Signal, as a vector or column-matrix.</li>
 <li><strong>snr</strong> (<em>int</em><em>, </em><em>float</em>) – Signal-to-Noise ration.</li>
 <li><strong>out</strong> (<em>str</em><em>, </em><em>optional</em>) – Output data. If ‘signal’, the signal <cite>x</cite> plus noise is
 returned. If ‘noise’, only the noise vector is returned. If
 ‘both’, signal with noise and noise only are returned. Any
 other value defaults to ‘signal’.</li>
+<li><strong>method</strong> (<em>str</em><em>, </em><em>optional</em>) – Method to compute noise vector (matrix) to be introduced in the
+signal. In the ‘vectorized’ method, the matrix energy is computed
+and used to compute the noise energy. In the ‘max_en’ method, the
+energy of each column of <cite>x</cite> is computed and only the highest
+value is used to compute the noise energy. The ‘vectorized’ method
+is used by default.</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Corrupted signal.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><cite>np.ndarray</cite></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueErrorExpection</span></code> – If <cite>method</cite> is not recognized.</p>
 </td>
 </tr>
 </tbody>
