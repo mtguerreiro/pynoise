@@ -1,5 +1,5 @@
 import numpy as np
-from pynoise import noise
+import pynoise
 
 import matplotlib
 import matplotlib.pyplot as plt
@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 # --- Input ---
 # Signal
 f = 60
-fs = 6000
+fs = 12000
 cycles = 5
 dc = 1
 ac = 1
@@ -23,7 +23,7 @@ t = np.arange(0, cycles/f, 1/fs)
 s = dc + ac*np.sin(2*np.pi*f*t)
 
 # Corrupted signal
-sn, n = noise.awgn(s, SNR, out='both')
+sn, n = pynoise.awgn(s, SNR, out='both')
 
 # --- Check actual SNR ---
 # Signal power, dB

@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='pynoise',
-      version='0.3.1',
+      version='0.3.2',
       description='Generates noise for signals',
       url='https://github.com/mtguerreiro/pynoise.git',
       author='Marco Guerreiro',
