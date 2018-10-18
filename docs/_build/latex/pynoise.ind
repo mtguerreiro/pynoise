@@ -1,0 +1,16 @@
+\begin{sphinxtheindex}
+\let\bigletter\sphinxstyleindexlettergroup
+
+  \bigletter A
+  \item awgn() (in module pynoise.noise), \hyperpage{3}
+
+  \indexspace
+  \bigletter N
+  \item noise (module), \hyperpage{3}
+
+  \indexspace
+  \bigletter P
+  \item pynoise (module), \hyperpage{3}
+  \item pynoise.noise (module), \hyperpage{3}
+
+\end{sphinxtheindex}

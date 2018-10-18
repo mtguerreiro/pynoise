@@ -10,6 +10,9 @@ Welcome to pynoise's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   intro.rst
+   pynoise.rst
+
 
 
 Indices and tables

@@ -6,3 +6,4 @@ pynoise
 
    pynoise
    setup
+   teste
