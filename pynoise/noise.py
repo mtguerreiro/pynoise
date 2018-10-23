@@ -52,13 +52,12 @@ def awgn(x, snr, out='signal', method='vectorized'):
         If `method` is not recognized.
 
     """    
-    N = x.shape[0]
-    
     # Signal power
-    # Ps = np.sum(x**2/N, axis=0)
     if method == 'vectorized':
+        N = x.size
         Ps = np.sum(x**2/N)
     elif method == 'max_en':
+        N = x.shape[0]
         Ps = np.max(np.sum(x**2/N, axis=0))
     else:
         raise ValueError('method \"' + str(method) + '\" not recognized.')
