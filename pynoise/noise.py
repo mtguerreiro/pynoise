@@ -12,15 +12,8 @@ def awgn(x, snr, out='signal', method='vectorized'):
 
     """Adds White Gaussian Noise to a signal.
 
-    The noise level is specified as a Signal-to-Noise Ratio (SNR) value.
-    The SNR is defined as:
-    
-    .. math:: SNR = 10\\log_{10}\\left(\\frac{E_x}{E_n}\\right)
-
-    where :math:`E_x` is the signal power and :math:`E_n` is the noise
-    power. The noise of a discrete signal can be computed as:
-
-    .. math:: E = \\frac{1}{N}\sum_{k=0}^{N - 1}|x_k|^2
+    The noise level is specified as a Signal-to-Noise Ratio (SNR) value,
+    which relates to signal-to-noise energy or power.
     
     Parameters
     ----------

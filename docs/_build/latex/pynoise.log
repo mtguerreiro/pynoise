@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2018.9.20)  17 OCT 2018 18:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2018.9.20)  25 OCT 2018 17:11
 entering extended mode
 **./pynoise.tex
 (pynoise.tex
@@ -847,77 +847,98 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 
 ]
 Chapter 1.
-[1
-
-] [2
-
-]
-Chapter 2.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 96.
+<noise_spectra.pdf, id=90, 714.73463pt x 495.87823pt>
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 88.
 (/home/marco/.miktex/texmfs/install/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 96.
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 110.
+File: noise_spectra.pdf Graphic file (type pdf)
+<use noise_spectra.pdf>
+Package pdftex.def Info: noise_spectra.pdf  used on input line 88.
+(pdftex.def)             Requested size: 357.36644pt x 247.9385pt.
+ [1
 
+ <./noise_spectra.pdf>] [2
+
+]
+Chapter 2.
+LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <9> not available
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 101.
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <9> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 105.
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 113.
+
+(/home/marco/.miktex/texmfs/install/tex/latex/psnfss/ts1pcr.fd
+File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
+)
+<noise_ex_app.pdf, id=155, 722.7pt x 433.62pt>
+File: noise_ex_app.pdf Graphic file (type pdf)
+<use noise_ex_app.pdf>
+Package pdftex.def Info: noise_ex_app.pdf  used on input line 125.
+(pdftex.def)             Requested size: 578.16078pt x 346.89647pt.
+ [3] [4 <./noise_ex_app.pdf>]
+Chapter 3.
+LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 142.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 149.
 
 (/home/marco/.miktex/texmfs/install/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 114.
- [3] [4
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 153.
+ [5
+
+] [6
 
 ]
-Chapter 3.
-[5] [6
+Chapter 4.
+[7] [8
 
-] [7
+]
+Chapter 5.
+[9] [10
+
+] [11
 
 
-] (pynoise.ind [8
+] (pynoise.ind [12
 
 
-] [9
+] [13
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 166.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 166.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 219.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 219.
  (pynoise.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 166.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 166.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 219.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 219.
 Package rerunfilecheck Info: File `pynoise.out' has not changed.
-(rerunfilecheck)             Checksum: F1D0F7EB5AA911C900E6F2A6AA2A569B;1178.
+(rerunfilecheck)             Checksum: 948F50141B42B3B716222A339919889A;1497.
  ) 
 Here is how much of TeX's memory you used:
- 13629 strings out of 494891
- 191189 string characters out of 3178673
- 284303 words of memory out of 3000000
- 16936 multiletter control sequences out of 15000+200000
- 44331 words of font info for 65 fonts, out of 3000000 for 9000
+ 13697 strings out of 494891
+ 192232 string characters out of 3178673
+ 294716 words of memory out of 3000000
+ 16982 multiletter control sequences out of 15000+200000
+ 48569 words of font info for 74 fonts, out of 3000000 for 9000
  1 hyphenation exception out of 8191
- 44i,16n,45p,1198b,443s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,11n,45p,1198b,447s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/home/marco/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc}</home/marco/
-.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/marco/.
-miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/marco/.m
-iktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb></home/marco/.mik
-tex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/marco/.mikte
-x/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/marco/.miktex/t
-exmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/marco/.miktex/te
-xmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/marco/.miktex/texm
-fs/install/fonts/type1/urw/courier/ucrb8a.pfb></home/marco/.miktex/texmfs/insta
-ll/fonts/type1/urw/courier/ucrr8a.pfb></home/marco/.miktex/texmfs/install/fonts
-/type1/urw/courier/ucrro8a.pfb></home/marco/.miktex/texmfs/install/fonts/type1/
-urw/helvetic/uhvb8a.pfb></home/marco/.miktex/texmfs/install/fonts/type1/urw/hel
-vetic/uhvbo8a.pfb></home/marco/.miktex/texmfs/install/fonts/type1/urw/helvetic/
-uhvr8a.pfb></home/marco/.miktex/texmfs/install/fonts/type1/urw/times/utmb8a.pfb
-></home/marco/.miktex/texmfs/install/fonts/type1/urw/times/utmr8a.pfb></home/ma
-rco/.miktex/texmfs/install/fonts/type1/urw/times/utmri8a.pfb>
-Output written on pynoise.pdf (13 pages, 166459 bytes).
+.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/marco/.
+miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/marco/.mi
+ktex/texmfs/install/fonts/type1/urw/courier/ucrb8a.pfb></home/marco/.miktex/tex
+mfs/install/fonts/type1/urw/courier/ucrr8a.pfb></home/marco/.miktex/texmfs/inst
+all/fonts/type1/urw/courier/ucrro8a.pfb></home/marco/.miktex/texmfs/install/fon
+ts/type1/urw/helvetic/uhvb8a.pfb></home/marco/.miktex/texmfs/install/fonts/type
+1/urw/helvetic/uhvbo8a.pfb></home/marco/.miktex/texmfs/install/fonts/type1/urw/
+helvetic/uhvr8a.pfb></home/marco/.miktex/texmfs/install/fonts/type1/urw/times/u
+tmb8a.pfb></home/marco/.miktex/texmfs/install/fonts/type1/urw/times/utmr8a.pfb>
+</home/marco/.miktex/texmfs/install/fonts/type1/urw/times/utmri8a.pfb>
+Output written on pynoise.pdf (17 pages, 184582 bytes).
 PDF statistics:
- 192 PDF objects out of 1000 (max. 8388607)
- 25 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 293 PDF objects out of 1000 (max. 8388607)
+ 33 named destinations out of 1000 (max. 500000)
+ 127 words of extra memory for PDF output out of 10000 (max. 10000000)
 

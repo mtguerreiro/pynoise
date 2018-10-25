@@ -5,5 +5,3 @@ pynoise
    :maxdepth: 4
 
    pynoise
-   setup
-   teste

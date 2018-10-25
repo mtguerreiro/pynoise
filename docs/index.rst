@@ -11,7 +11,9 @@ Welcome to pynoise's documentation!
    :caption: Contents:
 
    intro.rst
+   examples.rst
    pynoise.rst
+   modules.rst
 
 
 

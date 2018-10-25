@@ -70,10 +70,11 @@ plt.grid()
 # Noise spectra
 plt.subplot(2, 1, 2)
 markerline, stemlines, baseline = plt.stem(fx, Xrmag)
+plt.setp(baseline, visible=False)
 plt.xlabel(r'$f$ (Hz)')
 plt.ylabel(r'$|X_r|$')
 plt.title(r'Sinal de ruído no espectro de frequência')
 plt.grid()
 plt.tight_layout()
-
+plt.savefig('noise_specta.png', bbox_inches='tight')
 plt.show()

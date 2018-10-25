@@ -2,15 +2,15 @@
 \let\bigletter\sphinxstyleindexlettergroup
 
   \bigletter A
-  \item awgn() (in module pynoise.noise), \hyperpage{3}
+  \item awgn() (in module pynoise.noise), \hyperpage{5}
 
   \indexspace
   \bigletter N
-  \item noise (module), \hyperpage{3}
+  \item noise (module), \hyperpage{5}
 
   \indexspace
   \bigletter P
-  \item pynoise (module), \hyperpage{3}
-  \item pynoise.noise (module), \hyperpage{3}
+  \item pynoise (module), \hyperpage{5}
+  \item pynoise.noise (module), \hyperpage{5}
 
 \end{sphinxtheindex}

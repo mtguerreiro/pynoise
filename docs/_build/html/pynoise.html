@@ -16,7 +16,8 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Introduction" href="intro.html" />
+    <link rel="next" title="pynoise" href="modules.html" />
+    <link rel="prev" title="Examples" href="examples.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -45,14 +46,8 @@
 <dt id="pynoise.noise.awgn">
 <code class="descclassname">pynoise.noise.</code><code class="descname">awgn</code><span class="sig-paren">(</span><em>x</em>, <em>snr</em>, <em>out='signal'</em>, <em>method='vectorized'</em><span class="sig-paren">)</span><a class="headerlink" href="#pynoise.noise.awgn" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds White Gaussian Noise to a signal.</p>
-<p>The noise level is specified as a Signal-to-Noise Ratio (SNR) value.
-The SNR is defined as:</p>
-<div class="math notranslate nohighlight">
-\[SNR = 10\log_{10}\left(\frac{E_x}{E_n}\right)\]</div>
-<p>where <span class="math notranslate nohighlight">\(E_x\)</span> is the signal power and <span class="math notranslate nohighlight">\(E_n\)</span> is the noise
-power. The noise of a discrete signal can be computed as:</p>
-<div class="math notranslate nohighlight">
-\[E = \frac{1}{N}\sum_{k=0}^{N - 1}|x_k|^2\]</div>
+<p>The noise level is specified as a Signal-to-Noise Ratio (SNR) value,
+which relates to signal-to-noise energy or power.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -112,10 +107,15 @@ is used by default.</li>
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">pynoise package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-pynoise.noise">pynoise.noise module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-pynoise">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">pynoise</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pynoise package</a></li>
 </ul>
 </li>
 </ul>
@@ -124,7 +124,8 @@ is used by default.</li>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="intro.html" title="previous chapter">Introduction</a></li>
+      <li>Previous: <a href="examples.html" title="previous chapter">Examples</a></li>
+      <li>Next: <a href="modules.html" title="next chapter">pynoise</a></li>
   </ul></li>
 </ul>
 </div>

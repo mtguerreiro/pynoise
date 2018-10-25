@@ -23,7 +23,7 @@
 \usepackage{babel}
 \usepackage{times}
 \usepackage[Bjarne]{fncychap}
-\usepackage{sphinx}
+\usepackage[,numfigreset=1,mathnumfig]{sphinx}
 
 \fvset{fontsize=\small}
 \usepackage{geometry}
@@ -53,8 +53,8 @@
 
 
 \title{pynoise Documentation}
-\date{Oct 17, 2018}
-\release{v0.3.2}
+\date{Oct 25, 2018}
+\release{v0.3.4}
 \author{Marco Guerreiro}
 \newcommand{\sphinxlogo}{\vbox{}}
 \renewcommand{\releasename}{Release}
@@ -77,7 +77,53 @@ This package was created to add noise to signals, which can be matrices or vecto
 
 \section{Additive White Gaussian Noise}
 \label{\detokenize{intro:additive-white-gaussian-noise}}
-Additive White Gaussian Noise (AWGN) is a signal generated from a normal distribution. Due to this characteristic, the noise energy is spread across all spectrum.
+Additive White Gaussian Noise (AWGN) is a signal generated from a normal distribution. Hence, the noise energy is spread across all spectrum.
+
+\hyperref[\detokenize{intro:fig-noise-spectra}]{Fig.\@ \ref{\detokenize{intro:fig-noise-spectra}}} shows the histogram (top) and spectra (bottom) of a typical noise signal.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[scale=0.5]{{noise_spectra}.pdf}
+\caption{Noise histogram (top) and spectra (bottom).}\label{\detokenize{intro:id1}}\label{\detokenize{intro:fig-noise-spectra}}\end{figure}
+
+
+\chapter{Examples}
+\label{\detokenize{examples:examples}}\label{\detokenize{examples::doc}}
+
+\section{Corrupt ramp signal}
+\label{\detokenize{examples:corrupt-ramp-signal}}
+Add 30 dB of white gaussian noise to the ramp signal \(x(t) = t\):
+
+\fvset{hllines={, ,}}%
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k+kn}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{import} \PYG{n+nn}{pynoise}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k+kn}{as} \PYG{n+nn}{plt}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{} Signal \PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n}{t} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mf}{0.01}\PYG{p}{)}
+
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{t}
+\PYG{n}{xn} \PYG{o}{=} \PYG{n}{pynoise}\PYG{o}{.}\PYG{n}{awgn}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{l+m+mi}{30}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{} Plots \PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{figure}\PYG{p}{(}\PYG{n}{figsize}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,}\PYG{l+m+mi}{6}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Original signal}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{xn}\PYG{p}{,}  \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Corrupted signal}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{grid}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{t}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{x}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\begin{figure}[htbp]
+\centering
+
+\noindent\sphinxincludegraphics[scale=0.8]{{noise_ex_app}.pdf}
+\end{figure}
 
 
 \chapter{pynoise package}
@@ -93,22 +139,15 @@ This module contains functions to work with signals and noise.
 \phantomsection\label{\detokenize{pynoise:module-noise}}\index{noise (module)}\index{awgn() (in module pynoise.noise)}
 
 \begin{fulllineitems}
-\phantomsection\label{\detokenize{pynoise:pynoise.noise.awgn}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{pynoise.noise.}}\sphinxbfcode{\sphinxupquote{awgn}}}{\emph{x}, \emph{snr}, \emph{out='signal'}}{}
+\phantomsection\label{\detokenize{pynoise:pynoise.noise.awgn}}\pysiglinewithargsret{\sphinxcode{\sphinxupquote{pynoise.noise.}}\sphinxbfcode{\sphinxupquote{awgn}}}{\emph{x}, \emph{snr}, \emph{out='signal'}, \emph{method='vectorized'}}{}
 Adds White Gaussian Noise to a signal.
 
-The noise level is specified as a Signal-to-Noise Ratio (SNR) value.
-The SNR is defined as:
-\begin{equation*}
-\begin{split}SNR = 10\log_{10}\left(\frac{E_x}{E_n}\right)\end{split}
-\end{equation*}
-where \(E_x\) is the signal power and \(E_n\) is the noise
-power. The noise of a discrete signal can be computed as:
-\begin{equation*}
-\begin{split}E = \frac{1}{N}\sum_{k=0}^{N - 1}|x_k|^2\end{split}
-\end{equation*}\begin{quote}\begin{description}
+The noise level is specified as a Signal-to-Noise Ratio (SNR) value,
+which relates to signal-to-noise energy or power.
+\begin{quote}\begin{description}
 \item[{Parameters}] \leavevmode\begin{itemize}
 \item {} 
-\sphinxstyleliteralstrong{\sphinxupquote{x}} (\sphinxcode{\sphinxupquote{np.ndarray}}) \textendash{} Signal.
+\sphinxstyleliteralstrong{\sphinxupquote{x}} (\sphinxtitleref{np.ndarray}) \textendash{} Signal, as a vector or column-matrix.
 
 \item {} 
 \sphinxstyleliteralstrong{\sphinxupquote{snr}} (\sphinxstyleliteralemphasis{\sphinxupquote{int}}\sphinxstyleliteralemphasis{\sphinxupquote{, }}\sphinxstyleliteralemphasis{\sphinxupquote{float}}) \textendash{} Signal-to-Noise ration.
@@ -119,13 +158,24 @@ returned. If ‘noise’, only the noise vector is returned. If
 ‘both’, signal with noise and noise only are returned. Any
 other value defaults to ‘signal’.
 
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{method}} (\sphinxstyleliteralemphasis{\sphinxupquote{str}}\sphinxstyleliteralemphasis{\sphinxupquote{, }}\sphinxstyleliteralemphasis{\sphinxupquote{optional}}) \textendash{} Method to compute noise vector (matrix) to be introduced in the
+signal. In the ‘vectorized’ method, the matrix energy is computed
+and used to compute the noise energy. In the ‘max\_en’ method, the
+energy of each column of \sphinxtitleref{x} is computed and only the highest
+value is used to compute the noise energy. The ‘vectorized’ method
+is used by default.
+
 \end{itemize}
 
 \item[{Returns}] \leavevmode
 Corrupted signal.
 
 \item[{Return type}] \leavevmode
-\sphinxcode{\sphinxupquote{np.ndarray}}
+\sphinxtitleref{np.ndarray}
+
+\item[{Raises}] \leavevmode
+\sphinxcode{\sphinxupquote{ValueErrorExpection}} \textendash{} If \sphinxtitleref{method} is not recognized.
 
 \end{description}\end{quote}
 
@@ -135,6 +185,9 @@ Corrupted signal.
 
 \section{Module contents}
 \label{\detokenize{pynoise:module-pynoise}}\label{\detokenize{pynoise:module-contents}}\index{pynoise (module)}
+
+\chapter{pynoise}
+\label{\detokenize{modules:pynoise}}\label{\detokenize{modules::doc}}
 
 \chapter{Indices and tables}
 \label{\detokenize{index:indices-and-tables}}\begin{itemize}
