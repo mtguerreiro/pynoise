@@ -1,4 +1,5 @@
-"""This module contains functions to work with signals and noise.
+"""
+This module contains functions to work with signals and noise.
 
 .. module:: noise
     :synopsis: Noise functions for signals.
@@ -10,10 +11,19 @@ import numpy as np
 
 def awgn(x, snr, out='signal', method='vectorized'):
 
-    """Adds White Gaussian Noise to a signal.
+    r"""Adds White Gaussian Noise to a signal.
 
     The noise level is specified as a Signal-to-Noise Ratio (SNR) value,
     which relates to signal-to-noise energy or power.
+
+    The SNR between a signal :math:`x` and a noise :math:`n` is defined as:
+
+    .. math::
+
+        \text{SNR} = 10\log\left(\frac{E_x}{E_n}\right),
+
+    where :math:`E_x` is the energy of the signal :math:`x` and
+    :math:`E_n` is the energy of the signal :math:`n`.
     
     Parameters
     ----------
@@ -44,6 +54,25 @@ def awgn(x, snr, out='signal', method='vectorized'):
     ValueErrorExpection
         If `method` is not recognized.
 
+    Example
+    --------
+    Add 30 dB of white gaussian noise to the ramp signal
+    :math:`x(t) = t`:
+
+    .. plot:: pyplots/noise_ex_app.py
+        :include-source:
+        :scale: 80
+
+    :numref:`fig_noise_spectra` shows the histogram (top) and spectra
+    (bottom) of a typical noise signal.
+
+    .. _fig_noise_spectra:
+    .. figure:: images/noise_spectra.*
+        :scale: 50 %
+        :align: center
+	
+	Noise histogram (top) and spectra (bottom).
+    
     """    
     # Signal power
     if method == 'vectorized':
