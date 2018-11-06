@@ -3,11 +3,12 @@
 \contentsline {section}{\numberline {1.1}Additive White Gaussian Noise}{1}{section.1.1}
 \contentsline {chapter}{\numberline {2}Examples}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Corrupt ramp signal}{3}{section.2.1}
-\contentsline {chapter}{\numberline {3}pynoise package}{5}{chapter.3}
-\contentsline {section}{\numberline {3.1}Submodules}{5}{section.3.1}
-\contentsline {section}{\numberline {3.2}pynoise.noise module}{5}{section.3.2}
-\contentsline {section}{\numberline {3.3}Module contents}{5}{section.3.3}
-\contentsline {chapter}{\numberline {4}pynoise}{7}{chapter.4}
-\contentsline {chapter}{\numberline {5}Indices and tables}{9}{chapter.5}
-\contentsline {chapter}{Python Module Index}{11}{section*.5}
-\contentsline {chapter}{Index}{13}{section*.6}
+\contentsline {chapter}{\numberline {3}pynoise}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}pynoise package}{5}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Introduction}{5}{subsection.3.1.1}
+\contentsline {subsubsection}{Additive White Gaussian Noise}{5}{subsubsection*.3}
+\contentsline {subsection}{\numberline {3.1.2}Submodules}{5}{subsection.3.1.2}
+\contentsline {subsubsection}{noise module}{6}{subsubsection*.5}
+\contentsline {chapter}{\numberline {4}Indices and tables}{7}{chapter.4}
+\contentsline {chapter}{Python Module Index}{9}{section*.8}
+\contentsline {chapter}{Index}{11}{section*.9}

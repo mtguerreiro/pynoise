@@ -10,12 +10,9 @@ Welcome to pynoise's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   intro.rst
-   examples.rst
-   pynoise.rst
-   modules.rst
-
-
+   intro
+   examples
+   modules
 
 Indices and tables
 ==================

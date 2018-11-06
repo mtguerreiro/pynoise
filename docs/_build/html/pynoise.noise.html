@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Examples &#8212; pynoise v0.3.4 documentation</title>
+    <title>noise module &#8212; pynoise v0.3.4 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -16,8 +16,7 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="pynoise" href="modules.html" />
-    <link rel="prev" title="Introduction" href="intro.html" />
+    <link rel="prev" title="pynoise package" href="pynoise.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -34,11 +33,54 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="examples">
-<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="corrupt-ramp-signal">
-<h2>Corrupt ramp signal<a class="headerlink" href="#corrupt-ramp-signal" title="Permalink to this headline">¶</a></h2>
-<p>Add 30 dB of white gaussian noise to the ramp signal <span class="math notranslate nohighlight">\(x(t) = t\)</span>:</p>
+  <span class="target" id="module-pynoise.noise"></span><div class="section" id="noise-module">
+<h1>noise module<a class="headerlink" href="#noise-module" title="Permalink to this headline">¶</a></h1>
+<p>This module contains functions to work with signals and noise.</p>
+<span class="target" id="module-noise"></span><dl class="function">
+<dt id="pynoise.noise.awgn">
+<code class="descclassname">pynoise.noise.</code><code class="descname">awgn</code><span class="sig-paren">(</span><em>x</em>, <em>snr</em>, <em>out='signal'</em>, <em>method='vectorized'</em><span class="sig-paren">)</span><a class="headerlink" href="#pynoise.noise.awgn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds White Gaussian Noise to a signal.</p>
+<p>The noise level is specified as a Signal-to-Noise Ratio (SNR) value,
+which relates to signal-to-noise energy or power.</p>
+<p>The SNR between a signal <span class="math notranslate nohighlight">\(x\)</span> and a noise <span class="math notranslate nohighlight">\(n\)</span> is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\text{SNR} = 10\log\left(\frac{E_x}{E_n}\right),\]</div>
+<p>where <span class="math notranslate nohighlight">\(E_x\)</span> is the energy of the signal <span class="math notranslate nohighlight">\(x\)</span> and
+<span class="math notranslate nohighlight">\(E_n\)</span> is the energy of the signal <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> (<cite>np.ndarray</cite>) – Signal, as a vector or column-matrix.</li>
+<li><strong>snr</strong> (<em>int</em><em>, </em><em>float</em>) – Signal-to-Noise ration.</li>
+<li><strong>out</strong> (<em>str</em><em>, </em><em>optional</em>) – Output data. If ‘signal’, the signal <cite>x</cite> plus noise is
+returned. If ‘noise’, only the noise vector is returned. If
+‘both’, signal with noise and noise only are returned. Any
+other value defaults to ‘signal’.</li>
+<li><strong>method</strong> (<em>str</em><em>, </em><em>optional</em>) – Method to compute noise vector (matrix) to be introduced in the
+signal. In the ‘vectorized’ method, the matrix energy is computed
+and used to compute the noise energy. In the ‘max_en’ method, the
+energy of each column of <cite>x</cite> is computed and only the highest
+value is used to compute the noise energy. The ‘vectorized’ method
+is used by default.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Corrupted signal.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><cite>np.ndarray</cite></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueErrorExpection</span></code> – If <cite>method</cite> is not recognized.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<p>Add 30 dB of white gaussian noise to the ramp signal
+<span class="math notranslate nohighlight">\(x(t) = t\)</span>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pynoise</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
@@ -60,11 +102,12 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>(<a class="reference external" href="./pyplots/noise_ex_app.py">Source code</a>, <a class="reference external" href="./pyplots/noise_ex_app.png">png</a>, <a class="reference external" href="./pyplots/noise_ex_app.hires.png">hires.png</a>, <a class="reference external" href="./pyplots/noise_ex_app.pdf">pdf</a>)</p>
+<p>(<a class="reference external" href="./pyplots/noise_ex_app.py">Source code</a>)</p>
 <div class="figure">
 <a class="reference internal image-reference" href="_images/noise_ex_app.png"><img alt="_images/noise_ex_app.png" src="_images/noise_ex_app.png" style="width: 640.0px; height: 384.0px;" /></a>
 </div>
-</div>
+</dd></dl>
+
 </div>
 
 
@@ -87,19 +130,22 @@
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Examples</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#corrupt-ramp-signal">Corrupt ramp signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">pynoise</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pynoise.html">pynoise package</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">pynoise</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="intro.html" title="previous chapter">Introduction</a></li>
-      <li>Next: <a href="modules.html" title="next chapter">pynoise</a></li>
+  <li><a href="modules.html">pynoise</a><ul>
+  <li><a href="pynoise.html">pynoise package</a><ul>
+      <li>Previous: <a href="pynoise.html" title="previous chapter">pynoise package</a></li>
+  </ul></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>
@@ -135,7 +181,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="_sources/examples.rst.txt"
+      <a href="_sources/pynoise.noise.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

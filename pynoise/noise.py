@@ -1,4 +1,7 @@
 """
+noise module
+============
+
 This module contains functions to work with signals and noise.
 
 .. module:: noise
@@ -62,16 +65,6 @@ def awgn(x, snr, out='signal', method='vectorized'):
     .. plot:: pyplots/noise_ex_app.py
         :include-source:
         :scale: 80
-
-    :numref:`fig_noise_spectra` shows the histogram (top) and spectra
-    (bottom) of a typical noise signal.
-
-    .. _fig_noise_spectra:
-    .. figure:: images/noise_spectra.*
-        :scale: 50 %
-        :align: center
-	
-	Noise histogram (top) and spectra (bottom).
     
     """    
     # Signal power

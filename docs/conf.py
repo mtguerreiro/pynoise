@@ -46,8 +46,10 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinx.ext.napoleon',
 ]
+napoleon_google_docstring = False
+napoleon_numpy_docstring = True
 
-# exclude_patterns = ['setup.rst']
+exclude_patterns = ['setup.rst']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

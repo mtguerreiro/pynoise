@@ -2,11 +2,11 @@
 \let\bigletter\sphinxstyleindexlettergroup
 
   \bigletter A
-  \item awgn() (in module pynoise.noise), \hyperpage{5}
+  \item awgn() (in module pynoise.noise), \hyperpage{6}
 
   \indexspace
   \bigletter N
-  \item noise (module), \hyperpage{5}
+  \item noise (module), \hyperpage{6}
 
   \indexspace
   \bigletter P

@@ -16,8 +16,8 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="pynoise" href="modules.html" />
-    <link rel="prev" title="Examples" href="examples.html" />
+    <link rel="next" title="noise module" href="pynoise.noise.html" />
+    <link rel="prev" title="pynoise" href="modules.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -30,102 +30,42 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
-  <div class="section" id="pynoise-package">
-<h1>pynoise package<a class="headerlink" href="#pynoise-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-pynoise.noise">
-<span id="pynoise-noise-module"></span><h2>pynoise.noise module<a class="headerlink" href="#module-pynoise.noise" title="Permalink to this headline">¶</a></h2>
-<p>This module contains functions to work with signals and noise.</p>
-<span class="target" id="module-noise"></span><dl class="function">
-<dt id="pynoise.noise.awgn">
-<code class="descclassname">pynoise.noise.</code><code class="descname">awgn</code><span class="sig-paren">(</span><em>x</em>, <em>snr</em>, <em>out='signal'</em>, <em>method='vectorized'</em><span class="sig-paren">)</span><a class="headerlink" href="#pynoise.noise.awgn" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds White Gaussian Noise to a signal.</p>
-<p>The noise level is specified as a Signal-to-Noise Ratio (SNR) value,
-which relates to signal-to-noise energy or power.</p>
-<p>The SNR between a signal <span class="math notranslate nohighlight">\(x\)</span> and a noise <span class="math notranslate nohighlight">\(n\)</span> is defined as:</p>
-<div class="math notranslate nohighlight">
-\[\text{SNR} = 10\log\left(\frac{E_x}{E_n}\right),\]</div>
-<p>where <span class="math notranslate nohighlight">\(E_x\)</span> is the energy of the signal <span class="math notranslate nohighlight">\(x\)</span> and
-<span class="math notranslate nohighlight">\(E_n\)</span> is the energy of the signal <span class="math notranslate nohighlight">\(n\)</span>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> (<cite>np.ndarray</cite>) – Signal, as a vector or column-matrix.</li>
-<li><strong>snr</strong> (<em>int</em><em>, </em><em>float</em>) – Signal-to-Noise ration.</li>
-<li><strong>out</strong> (<em>str</em><em>, </em><em>optional</em>) – Output data. If ‘signal’, the signal <cite>x</cite> plus noise is
-returned. If ‘noise’, only the noise vector is returned. If
-‘both’, signal with noise and noise only are returned. Any
-other value defaults to ‘signal’.</li>
-<li><strong>method</strong> (<em>str</em><em>, </em><em>optional</em>) – Method to compute noise vector (matrix) to be introduced in the
-signal. In the ‘vectorized’ method, the matrix energy is computed
-and used to compute the noise energy. In the ‘max_en’ method, the
-energy of each column of <cite>x</cite> is computed and only the highest
-value is used to compute the noise energy. The ‘vectorized’ method
-is used by default.</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Corrupted signal.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><cite>np.ndarray</cite></p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueErrorExpection</span></code> – If <cite>method</cite> is not recognized.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Example</p>
-<p>Add 30 dB of white gaussian noise to the ramp signal
-<span class="math notranslate nohighlight">\(x(t) = t\)</span>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pynoise</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-
-<span class="c1"># --- Signal ---</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">t</span>
-<span class="n">xn</span> <span class="o">=</span> <span class="n">pynoise</span><span class="o">.</span><span class="n">awgn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
-
-<span class="c1"># --- Plots ---</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original signal&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">xn</span><span class="p">,</span>  <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Corrupted signal&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>(<a class="reference external" href="./pyplots/noise_ex_app.py">Source code</a>, <a class="reference external" href="./pyplots/noise_ex_app.png">png</a>, <a class="reference external" href="./pyplots/noise_ex_app.hires.png">hires.png</a>, <a class="reference external" href="./pyplots/noise_ex_app.pdf">pdf</a>)</p>
-<div class="figure">
-<a class="reference internal image-reference" href="_images/noise_ex_app.png"><img alt="_images/noise_ex_app.png" src="_images/noise_ex_app.png" style="width: 640.0px; height: 384.0px;" /></a>
-</div>
-<p><a class="reference internal" href="#fig-noise-spectra"><span class="std std-numref">Fig. 2</span></a> shows the histogram (top) and spectra
-(bottom) of a typical noise signal.</p>
+  <div class="section" id="module-pynoise">
+<span id="pynoise-package"></span><h1>pynoise package<a class="headerlink" href="#module-pynoise" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This package was created to add noise to signals, which can be matrices or
+vectors. As of October 2018, only the additive white gaussian noise is
+implemented.</p>
+<div class="section" id="additive-white-gaussian-noise">
+<h3>Additive White Gaussian Noise<a class="headerlink" href="#additive-white-gaussian-noise" title="Permalink to this headline">¶</a></h3>
+<p>Additive White Gaussian Noise (AWGN) is a signal generated from a normal
+distribution. Hence, the noise energy is spread across all spectrum.</p>
+<p><a class="reference internal" href="#fig-noise-spectra"><span class="std std-numref">Fig. 1</span></a> shows the histogram (top) and spectra (bottom)
+of a typical noise signal.</p>
 <div class="figure align-center" id="id1">
 <span id="fig-noise-spectra"></span><a class="reference internal image-reference" href="_images/noise_spectra.png"><img alt="_images/noise_spectra.png" src="_images/noise_spectra.png" style="width: 494.5px; height: 345.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Noise histogram (top) and spectra (bottom).</span></p>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Noise histogram (top) and spectra (bottom).</span></p>
 </div>
-</dd></dl>
-
 </div>
-<div class="section" id="module-pynoise">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pynoise" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pynoise.noise.html">noise module</a></li>
+</ul>
+</div>
 </div>
 </div>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -144,12 +84,6 @@ is used by default.</li>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">pynoise package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-pynoise.noise">pynoise.noise module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-pynoise">Module contents</a></li>
-</ul>
-</li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">pynoise</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">pynoise package</a></li>
 </ul>
@@ -160,8 +94,10 @@ is used by default.</li>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="examples.html" title="previous chapter">Examples</a></li>
-      <li>Next: <a href="modules.html" title="next chapter">pynoise</a></li>
+  <li><a href="modules.html">pynoise</a><ul>
+      <li>Previous: <a href="modules.html" title="previous chapter">pynoise</a></li>
+      <li>Next: <a href="pynoise.noise.html" title="next chapter">noise module</a></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>
@@ -177,6 +113,14 @@ is used by default.</li>
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
@@ -186,7 +130,7 @@ is used by default.</li>
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="_sources/pynoise.rst.txt"

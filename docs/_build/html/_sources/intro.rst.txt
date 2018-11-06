@@ -1,18 +1,14 @@
 Introduction
 =============
 
-This package was created to add noise to signals, which can be matrices or vectors. As of October 2018, only the additive white gaussian noise is implemented.
+This package was created to add noise to signals, which can be matrices or
+vectors. As of October 2018, only the additive white gaussian noise is
+implemented. Future implementations can consider other types of noise, as
+listed in `Colors of Noise <https://en.wikipedia.org/wiki/Colors_of_noise>`_.
 
 Additive White Gaussian Noise
 ------------------------------
+Additive White Guassian Noise (AWGN) is a model of noise that mimics the occurence of random 
+processes. AWGN is derived from a normal distribution, having its energy spread across all
+spectrum.
 
-Additive White Gaussian Noise (AWGN) is a signal generated from a normal distribution. Hence, the noise energy is spread across all spectrum. 
-
-:numref:`fig_noise_spectra` shows the histogram (top) and spectra (bottom) of a typical noise signal.
-
-.. _fig_noise_spectra:
-.. figure:: images/noise_spectra.*
-	:scale: 50 %
-  	:align: center
-	
-	Noise histogram (top) and spectra (bottom).
