@@ -4,9 +4,11 @@ Procedure
 ---------
 
 * Generate a Nx3 matrix, where:
+
   * A[:, 0] = 0.8t
   * A[:, 1] = 1.0t
   * A[:, 2] = 1.3t
+  
 * Add noise with the pynoise package, using the 'max_en' method.
 * Compute the difference between the original matrix and the matrix corrupted
   with noise, that is, get the pure noise signal.
